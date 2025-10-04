@@ -1,0 +1,54 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* full screen height */
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sign-in-card {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.sign-in-card label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.sign-in-card input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.sign-in-card button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #1E4F78;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-card button:hover {
+  background-color: #357ab8;
+}

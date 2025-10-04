@@ -1,0 +1,54 @@
+.backContainer {
+    margin: 1rem;
+}
+
+.backBtn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ccc;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.backBtn:hover {
+    background-color: #1E4F78;
+    transform: scale(1.05);
+    color: white;
+}
+
+
+.heading {
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* space between buttons */
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgb(198, 197, 197); /* light blue */
+    color: white;
+}
+
+.active {
+    background-color: #1E4F78; /* darker blue for active */
+    transform: scale(1.05);
+}
