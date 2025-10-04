@@ -4,11 +4,12 @@ const Client = require("./userModel/ClientModel.js")
 const cors = require("cors");
 const app = express();
 const Arbitrator = require("./userModel/ArbitratorModel.js")
+require('dotenv').config();
 //atharv cluster:
-// mongoose.connect("mongodb+srv://atharvkolhe00:1062037971@cluster0.yyskofu.mongodb.net/Arbitration?retryWrites=true&w=majority&appName=Cluster0").then(() => { console.log("connected") }).catch(() => { console.log("not connected") });
+// mongoose.connect(process.env.Cluster.Atharv).then(() => { console.log("connected") }).catch(() => { console.log("not connected") });
 
 //shubham cluster:
-mongoose.connect("mongodb+srv://sawantsb27_db_user:oSKRytT1P7jccByq@nodejscluster.d5fgpuz.mongodb.net/?retryWrites=true&w=majority&appName=NodeJsCluster").then(() => { console.log("connected") }).catch(() => { console.log("not connected") });
+mongoose.connect(process.env.ClusterShubham).then(() => { console.log("connected") }).catch(() => { console.log("not connected") });
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }))
