@@ -45,7 +45,7 @@ const Register = () => {
 
             }
             //🔗 connection to backend client route
-            const endpoint="http://localhost:5000/client";
+            const endpoint="http://localhost:5000/Register-client";
             const resp=await fetch(endpoint,{
                 method:"POST",
                 headers:{
@@ -68,7 +68,7 @@ const Register = () => {
                 profession,
             }
             // 🔗 connection to backend arbitrator route
-            const endpoint="http://localhost:5000/arbitrator";
+            const endpoint="http://localhost:5000/Register-arbitrator";
             const resp=await fetch(endpoint,{
                 method:"POST",
                 headers:{

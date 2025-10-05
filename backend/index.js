@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
-app.post("/client", async (req, res) => {
+app.post("/Register-client", async (req, res) => {
     try {
 
         const body = req.body;
@@ -40,7 +40,7 @@ app.post("/client", async (req, res) => {
 
 })
 
-app.post("/arbitrator", async (req, res) => {
+app.post("/Register-arbitrator", async (req, res) => {
     try {
 
         const body = req.body;
