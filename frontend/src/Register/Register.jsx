@@ -44,15 +44,16 @@ const Register = () => {
                 governmentId,
 
             }
-            //🔗 connection to backend client route
-            const endpoint="http://localhost:5000/Register-client";
-            const resp=await fetch(endpoint,{
-                method:"POST",
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                body:JSON.stringify(formdata)
-            })
+                //🔗 connection to backend client route
+                const endpoint="http://localhost:5000/Register-client";
+                const resp=await fetch(endpoint,{
+                    method:"POST",
+                    headers:{
+                        "Content-Type":"application/json"
+                    },
+                    body:JSON.stringify(formdata),
+                    credentials: "include"
+                })
             const data=await resp.json();
             console.log(data);
             
@@ -74,7 +75,8 @@ const Register = () => {
                 headers:{
                     "Content-Type":"application/json"
                 },
-                body:JSON.stringify(formdata)
+                body:JSON.stringify(formdata),
+                credentials: "include"
             })
             const data=await resp.json();
             console.log(data);
