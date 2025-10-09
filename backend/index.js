@@ -7,7 +7,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 require('dotenv').config();
-
+ 
+// //get cookie from frontend
+//   const {getToken}=require("../frontend/src/Landing_page/auth.js");
 const app = express();
 
 // Connect to MongoDB
@@ -50,7 +52,7 @@ app.post("/Register-client", async (req, res) => {
         const token = jwt.sign({ email, id: user._id }, process.env.jwtseceretkey);
 
         res.cookie("token", token, {
-            httpOnly: true,
+            httpOnly: false,
             secure: process.env.NODE_ENV === "production",
             sameSite: "lax",
             maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
@@ -85,14 +87,14 @@ app.post("/Register-arbitrator", async (req, res) => {
         const token = jwt.sign({ email, id: user._id }, process.env.jwtseceretkey);
 
         res.cookie("token", token, {
-            httpOnly: true,
+            httpOnly: false,
             secure: process.env.NODE_ENV === "production",
             sameSite: "lax",
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
-
+        
         return res.status(200).json({ msg: "success" });
-
+        
     } catch (err) {
         return res.status(500).json({ err: err.message });
     }

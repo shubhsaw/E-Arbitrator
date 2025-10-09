@@ -49,3 +49,21 @@
     cursor: pointer;
     
 }   
+
+.logoutBtn {
+    all:unset;    /* reset all button styles */
+  background: none;        /* transparent background (like link) */
+  border: none;            /* remove default button border */
+  color: white;            /* same text color as links */
+  font-size: larger;
+  font-family: SantoshiBold, sans-serif;
+  text-decoration: none;   /* remove underline */
+  cursor: pointer;         /* make it look clickable */
+  padding: 0;              /* remove extra spacing */
+}
+
+/* Hover effect same as links */
+.logoutBtn:hover {
+  color: gray;
+}
+

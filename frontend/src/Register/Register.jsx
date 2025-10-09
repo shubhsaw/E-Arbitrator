@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Register.css'
 import { useNavigate } from 'react-router-dom';
+
 const Register = () => {
+     
     const [flag, setFlag] = React.useState(0);
     const [governmentId, setGovernmentId] = React.useState({ type: "", id: "" });
     const [fullName, setFullName] = React.useState("");
@@ -14,12 +16,15 @@ const Register = () => {
     const [selectedProfession, setSelectedProfession] = React.useState("");
     const [register, setRegister] = React.useState("");
     
-
+     const navigate=useNavigate();
+     
     // Handle change event for the select dropdown
     const handleChange = (e) => {
         setSelectedOption(e.target.value);
     };
    async function handleSubmit(e) {
+   
+   
         e.preventDefault();
         // Handle form submission logic here
         console.log({
@@ -56,6 +61,7 @@ const Register = () => {
                 })
             const data=await resp.json();
             console.log(data);
+            navigate('/');
             
         } else if (register === 'arbitrator') {
             // Handle arbitrator registration logic
@@ -80,6 +86,7 @@ const Register = () => {
             })
             const data=await resp.json();
             console.log(data);
+            navigate('/');
         }
 
         // Reset form fields
@@ -92,8 +99,9 @@ const Register = () => {
         setGovernmentId({ type: "", id: "" });
         setProfession({ type: "", BarCouncil: "" });
         setRegister("");
+        navigate('/');
     }
-    const navigate = useNavigate();
+    
     return (
         <>
             <div className="backContainer">
@@ -284,6 +292,11 @@ const Register = () => {
                                     </div>)
 
                             }
+                            <div className='form-group'>
+                            <label htmlFor="">Upload Passport Size Photo</label>
+
+                            <input type="file" name="passport-photo" id="" />
+                            </div>
                             {/* ✅ SUBMIT BUTTON OF ARBITRATOR */}
                             <button type="submit" value='arbitrator' className="submit-btn" onClick={(e) => setRegister(e.target.value)}>Register</button>
                         </form>
